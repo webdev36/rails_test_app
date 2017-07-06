@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :charge do
-    customer nil
-    paid false
+    customer 1
+    paid true
     amount 1
-    currency "MyString"
+    currency "us"
     refunded false
   end
 end
