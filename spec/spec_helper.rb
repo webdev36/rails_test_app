@@ -12,4 +12,8 @@ RSpec.configure do |config|
   config.default_formatter = 'doc' if config.files_to_run.one?
   config.order = :random
   Kernel.srand config.seed
+
+  config.before(:suite) do
+    Rails.application.load_seed # loading seeds
+  end
 end

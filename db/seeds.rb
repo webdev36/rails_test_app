@@ -12,10 +12,12 @@ customers = [
   {first_name: 'Andrew', last_name: 'Chung'},
   {first_name: 'Mike', last_name: 'Smith'}
 ]
+p '>>>>>>> Creating customers'
 customers.each do |customer|
   Customer.create!(first_name: customer[:first_name], last_name: customer[:last_name])
 end
 
+p '>>>>>>> Creating transactions'
 customer  = Customer.all[0]
 5.times.each do
   customer.charges.create( paid: true, amount: Random.rand(10) * 1000 + 900, currency: "usd", refunded: false)
@@ -43,3 +45,4 @@ customer.charges.create( paid: true, amount: Random.rand(10) * 1000 + 900, curre
 2.times.each do
   customer.charges.create( paid: false, amount: Random.rand(10) * 1000 + 900, currency: "usd", refunded: false)
 end
+p '>>>>>>> end <<<<<<<<'

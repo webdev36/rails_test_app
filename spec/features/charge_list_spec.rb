@@ -13,7 +13,7 @@ RSpec.feature 'Charge List' do
     expect(page).to have_css 'div.succed-charges h1', text: 'Successful Charges'
 
     within('div.failed-charges') do
-      expect( all('div.row').count ).to eq(2)
+      expect( all('div.row').count ).to eq(5)
     end
     # expect(page).to have_xpath('//div[@class="failed-charges"]/div', count: 4)
     within("div.failed-charges") do
